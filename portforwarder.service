@@ -1,0 +1,14 @@
+# DOMO Port Forwarder Service Configuration
+# /etc/systemd/system/portforwarder.service
+[Unit]
+Description=DOMO Port Forwarding Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/portforwarder /etc/portforwarder/config.conf
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
